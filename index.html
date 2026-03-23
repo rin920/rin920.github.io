@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAOIF初心者ガイド</title>
-  <meta name="description" content="最新の攻略サイトが無かったので自分で作ってみました。SAOIFを効率よく進めたい人向けの攻略サイトです。
-    無課金・微課金でも強くなれる方法をまとめています。初心者の方の助けになれば嬉しいです。">
+  <title>SAOIF攻略サイト</title>
+  <meta name="description" content="最新の攻略サイトが無かったので自分で作ってみました。SAOIFを効率よく進めたい人向けの攻略サイトです。無課金・微課金でも強くなれる方法をまとめています。初心者の方の助けになれば嬉しいです。">
+  <meta property="og:title" content="SAOIF初心者ガイド">
+  <meta property="og:description" content="最新の攻略サイトが無かったので自分で作ってみました。SAOIFを効率よく進めたい人向けの攻略サイトです。無課金・微課金でも強くなれる方法をまとめています。初心者の方の助けになれば嬉しいです。">
+  <meta property="og:url" content="https://rin920.github.io">
+  <meta property="og:type" content="website">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -15,86 +18,158 @@
       font-size: 16px;
       line-height: 1.8;
     }
+
+    /* ヘッダー */
     header {
       background: #2c7bb6;
       color: white;
       padding: 20px;
       text-align: center;
     }
-    header h1 { font-size: 24px; }
+    header h1 {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    header p {
+      font-size: 13px;
+      margin-top: 4px;
+      opacity: 0.85;
+    }
+
+    /* サイト紹介帯 */
+    .site-info {
+      background: #f0f0f0;
+      border-bottom: 1px solid #ddd;
+      padding: 12px 20px;
+      text-align: center;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* コンテナ */
     .container {
       max-width: 800px;
       margin: 30px auto;
       padding: 0 20px;
     }
+
+    /* 記事エリア */
     .article {
       background: white;
-      border-radius: 8px;
-      padding: 40px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 30px;
     }
-    .date {
-      font-size: 13px;
-      color: #888;
-      margin-bottom: 12px;
+
+    /* 記事タイトル */
+    .article-title {
+      font-size: 22px;
+      font-weight: bold;
+      border-bottom: 3px solid #2c7bb6;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
     }
+
+    /* イントロ */
     .intro {
-      margin-bottom: 30px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #eee;
+      background: #f9f9f9;
+      border-left: 4px solid #2c7bb6;
+      padding: 12px 16px;
+      margin-bottom: 25px;
+      font-size: 14px;
+      color: #555;
     }
+    .intro .date {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 6px;
+    }
+
+    /* 目次 */
     .toc {
       background: #fafafa;
       border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 25px 35px;
-      margin: 30px auto;
+      border-radius: 4px;
+      padding: 20px 25px;
+      margin: 0 auto 30px;
       width: fit-content;
-      min-width: 250px;
+      min-width: 260px;
     }
-    .toc h3 {
-      font-size: 15px;
-      color: #2c7bb6;
+    .toc-title {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
       margin-bottom: 12px;
+      color: #333;
     }
-    .toc ol { margin-left: 20px; }
-    .toc ol li { margin-bottom: 6px; }
+    .toc ol {
+      margin-left: 20px;
+    }
+    .toc ol li {
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
     .toc ol li a {
       color: #2c7bb6;
       text-decoration: none;
     }
-    .toc ol li a:hover { text-decoration: underline; }
-    h2 {
-      font-size: 20px;
-      color: #2c7bb6;
-      border-left: 4px solid #2c7bb6;
-      padding-left: 10px;
-      margin: 30px 0 15px;
+    .toc ol li a:hover {
+      text-decoration: underline;
     }
+
+    /* 見出し */
+    h2 {
+      font-size: 19px;
+      font-weight: bold;
+      border-left: 5px solid #2c7bb6;
+      border-bottom: 1px solid #ddd;
+      padding: 6px 10px 8px;
+      margin: 30px 0 15px;
+      background: #f9f9f9;
+    }
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
     p { margin-bottom: 12px; }
-    ul { margin: 10px 0 12px 20px; }
+    ul { margin: 10px 0 12px 24px; }
     ul li { margin-bottom: 6px; }
+
     hr {
       border: none;
       border-top: 1px solid #eee;
-      margin: 30px 0;
+      margin: 25px 0;
     }
+
+    /* フッター */
     footer {
       text-align: center;
       padding: 20px;
       font-size: 13px;
       color: #aaa;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+      background: white;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>SAOIF 初心者ガイド</h1>
+  <h1>SAOIF攻略サイト</h1>
+  <p>無課金・微課金でも強くなれる攻略情報をまとめています</p>
 </header>
+
+<div class="site-info">
+  最新の攻略サイトが無かったので自分で作ってみました。SAOIFを効率よく進めたい人向けの攻略サイトです。<br>
+  無課金・微課金でも強くなれる方法をまとめています。初心者の方の助けになれば嬉しいです。
+</div>
 
 <div class="container">
   <div class="article">
+
+    <h1 class="article-title">初心者が最初にやるべき5つのこと</h1>
 
     <div class="intro">
       <p class="date">※2026年3月現在の情報です</p>
@@ -102,7 +177,7 @@
     </div>
 
     <div class="toc">
-      <h3>目次</h3>
+      <p class="toc-title">目次</p>
       <ol>
         <li><a href="#story">メインストーリーを進めよう</a></li>
         <li><a href="#daily">デイリーミッションは必ずやろう</a></li>
