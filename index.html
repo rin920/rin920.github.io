@@ -4,11 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SAOIF攻略サイト</title>
-  <meta name="description" content="最新の攻略サイトが無かったので自分で作ってみました。SAOIFを効率よく進めたい人向けの攻略サイトです。無課金・微課金でも強くなれる方法をまとめています。初心者の方の助けになれば嬉しいです。">
-  <meta property="og:title" content="SAOIF初心者ガイド">
-  <meta property="og:description" content="最新の攻略サイトが無かったので自分で作ってみました。SAOIFを効率よく進めたい人向けの攻略サイトです。無課金・微課金でも強くなれる方法をまとめています。初心者の方の助けになれば嬉しいです。">
-  <meta property="og:url" content="https://rin920.github.io">
-  <meta property="og:type" content="website">
+  <meta name="description" content="最新の攻略サイトが無かったので自分で作ってみました。SAOIFを効率よく進めたい人向けの攻略サイトです。無課金・微課金でも強くなれる方法をまとめています。">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -24,112 +20,116 @@
       padding: 20px;
       text-align: center;
     }
-    header h1 {
-      font-size: 22px;
-      font-weight: bold;
+    header h1 { font-size: 22px; font-weight: bold; }
+    header p { font-size: 14px; margin-top: 4px; opacity: 0.85; }
+    nav {
+      background: #1a5f94;
+      padding: 0 20px;
     }
-    header p {
+    nav ul {
+      max-width: 800px;
+      margin: 0 auto;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      display: block;
+      padding: 12px 16px;
+      color: white;
+      text-decoration: none;
       font-size: 14px;
-      margin-top: 4px;
-      opacity: 0.85;
     }
-    .site-info {
-      background: #f0f0f0;
-      border-bottom: 1px solid #ddd;
-      padding: 12px 20px;
-      text-align: center;
-      font-size: 15px;
-      color: #555;
-      line-height: 1.7;
-    }
+    nav ul li a:hover { background: #154e7a; }
     .container {
       max-width: 800px;
       margin: 30px auto;
       padding: 0 20px;
     }
-    .article {
+
+    /* プロフィール */
+    .profile {
       background: white;
       border: 1px solid #ddd;
       border-radius: 4px;
-      padding: 30px;
-    }
-    .article-title {
-      font-size: 22px;
-      font-weight: bold;
-      border-bottom: 3px solid #2c7bb6;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-    .intro {
-      background: #f9f9f9;
-      border-left: 4px solid #2c7bb6;
-      padding: 12px 16px;
-      margin-bottom: 25px;
-      font-size: 16px;
-      color: #555;
-    }
-    .intro .date {
-      font-size: 13px;
-      color: #999;
-      margin-bottom: 6px;
-    }
-    .toc {
-      background: #fafafa;
-      border: 1px solid #ddd;
-      border-radius: 4px;
       padding: 20px 25px;
-      margin: 0 auto 30px;
-      width: fit-content;
-      min-width: 260px;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
     }
-    .toc-title {
-      font-size: 15px;
+    .profile-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #2c7bb6;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .profile-text h2 {
+      font-size: 17px;
       font-weight: bold;
-      text-align: center;
-      margin-bottom: 12px;
+      margin-bottom: 6px;
+      border: none;
+      background: none;
+      padding: 0;
       color: #333;
     }
-    .toc ol {
-      margin-left: 20px;
+    .profile-text p {
+      font-size: 15px;
+      color: #555;
+      margin: 0;
     }
-    .toc ol li {
-      margin-bottom: 6px;
-      font-size: 16px;
-    }
-    .toc ol li a {
-      color: #2c7bb6;
-      text-decoration: none;
-    }
-    .toc ol li a:hover {
-      text-decoration: underline;
-    }
-    h2 {
-      font-size: 21px;
+
+    /* 記事一覧 */
+    .section-title {
+      font-size: 18px;
       font-weight: bold;
       border-left: 5px solid #2c7bb6;
-      border-bottom: 1px solid #ddd;
-      padding: 6px 10px 8px;
-      margin: 30px 0 15px;
-      background: #f9f9f9;
+      padding-left: 10px;
+      margin-bottom: 15px;
     }
-    h2:first-of-type {
-      margin-top: 0;
+    .article-list {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 30px;
     }
-    p { margin-bottom: 12px; }
-    ul { margin: 10px 0 12px 24px; }
-    ul li { margin-bottom: 6px; }
-    hr {
-      border: none;
-      border-top: 1px solid #eee;
-      margin: 25px 0;
+    .article-list a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      text-decoration: none;
+      color: #333;
+      border-bottom: 1px solid #eee;
+      font-size: 16px;
+      transition: background 0.15s;
     }
+    .article-list a:last-child { border-bottom: none; }
+    .article-list a:hover { background: #f5f9ff; }
+    .article-list a .tag {
+      font-size: 12px;
+      background: #e8f2fb;
+      color: #2c7bb6;
+      padding: 2px 8px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
       font-size: 13px;
       color: #aaa;
       border-top: 1px solid #ddd;
-      margin-top: 40px;
+      margin-top: 20px;
       background: white;
     }
   </style>
@@ -138,78 +138,54 @@
 
 <header>
   <h1>SAOIF攻略サイト</h1>
+  <p>初心者〜中級者向けの攻略情報をまとめています</p>
 </header>
-<nav style="background:#1a5f94;padding:0 20px;">
-  <ul style="max-width:800px;margin:0 auto;list-style:none;display:flex;flex-wrap:wrap;">
-    <li><a href="index.html" style="display:block;padding:12px 16px;color:white;text-decoration:none;font-size:14px;">ホーム</a></li>
-    <li><a href="#" style="display:block;padding:12px 16px;color:white;text-decoration:none;font-size:14px;">初心者ガイド</a></li>
-    <li><a href="#" style="display:block;padding:12px 16px;color:white;text-decoration:none;font-size:14px;">ジェム・ガチャ</a></li>
-    <li><a href="#" style="display:block;padding:12px 16px;color:white;text-decoration:none;font-size:14px;">スキレコ情報</a></li>
-    <li><a href="#" style="display:block;padding:12px 16px;color:white;text-decoration:none;font-size:14px;">ギルド</a></li>
-    <li><a href="#" style="display:block;padding:12px 16px;color:white;text-decoration:none;font-size:14px;">イベント</a></li>
+
+<nav>
+  <ul>
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="#">初心者ガイド</a></li>
+    <li><a href="#">ジェム・ガチャ</a></li>
+    <li><a href="#">スキレコ情報</a></li>
+    <li><a href="#">ギルド</a></li>
+    <li><a href="#">イベント</a></li>
   </ul>
 </nav>
 
-<div class="site-info">
-  最新の攻略サイトが無かったので自分で作ってみました。SAOIFを効率よく進めたい人向けの攻略サイトです。<br>
-  無課金・微課金でも強くなれる方法をまとめています。初心者の方の助けになれば嬉しいです。
-</div>
-
 <div class="container">
-  <div class="article">
 
-    <h1 class="article-title">初心者が最初にやるべき5つのこと</h1>
-
-    <div class="intro">
-      <p class="date">※2026年3月現在の情報です</p>
-      <p>SAOIFを始めたばかりで何からやればいいかわからない方へ。この記事では、初心者が最初にやるべき5つのことをまとめました。まずはこれだけ押さえておけば大丈夫です。</p>
+  <div class="profile">
+    <div class="profile-icon">凛</div>
+    <div class="profile-text">
+      <h2>凛* について</h2>
+      <p>TP25万程度の中級者で、ギルド桜吹雪に所属しています。最新の攻略情報が少ないと感じていたので、初心者〜中級者向けの攻略サイトを作りました。一緒に楽しみましょう！</p>
     </div>
-
-    <div class="toc">
-      <p class="toc-title">目次</p>
-      <ol>
-        <li><a href="#story">メインストーリーを進めよう</a></li>
-        <li><a href="#daily">デイリーミッションは必ずやろう</a></li>
-        <li><a href="#gem">ジェムは計画的に使おう</a></li>
-        <li><a href="#guild">ギルドに入ろう</a></li>
-        <li><a href="#pace">自分のペースで楽しもう</a></li>
-      </ol>
-    </div>
-
-    <h2 id="story">1. メインストーリーを進めよう</h2>
-    <p>メインストーリーを進むにつれて、多くのコンテンツが解放されます。行けるところまで進めましょう。</p>
-
-    <hr>
-
-    <h2 id="daily">2. デイリーミッションは必ずやろう</h2>
-    <p>ジェムはとにかく重要です。無課金・微課金で遊ぶなら、日々の積み重ねが戦力差になります。</p>
-    <p>1ヶ月でどれくらい貯まる？（※現バージョン時点）<br>
-    デイリーミッションで約1,800ジェム、ログインボーナスで約2,000ジェム、イベント・補填など合わせて、合計で月約4,000〜5,000ジェムが目安です。</p>
-    <p>コツコツ続けるだけで、毎月まとまった量のジェムを確保できます。</p>
-
-    <hr>
-
-    <h2 id="gem">3. ジェムは計画的に使おう</h2>
-    <p>ガチャを引く前に、手持ちとの相性・周回したいコンテンツとの相性や開催期間を確認しましょう。「今本当に必要か？」を常に意識することが大切です。</p>
-    <p>初心者が集めた方が良いスキレコは「【SAOIF】初心者がガチャで最初に狙うべきスキレコ」で話しています。</p>
-
-    <hr>
-
-    <h2 id="guild">4. ギルドに入ろう</h2>
-    <p>ギルドへの加入は、強くなるための近道のひとつです。</p>
-    <ul>
-      <li>情報共有ができる</li>
-      <li>経験者からアドバイスをもらえる</li>
-      <li>ギルドバフの恩恵を受けられる</li>
-    </ul>
-    <p>初心者ほど早めの加入がおすすめです。</p>
-
-    <hr>
-
-    <h2 id="pace">5. 自分のペースで楽しもう</h2>
-    <p>効率も大切ですが、最終的には自分の好きな遊び方を見つけることが一番です。モチベーションを維持して楽しく続けることが、結果的に一番の成長につながります。無理せず、自分のペースで続けていきましょう。</p>
-
   </div>
+
+  <p class="section-title">記事一覧</p>
+  <div class="article-list">
+    <a href="beginner-guide.html">
+      <span class="tag">初心者</span>
+      初心者が最初にやるべき5つのこと
+    </a>
+    <a href="#">
+      <span class="tag">ガチャ</span>
+      【SAOIF】初心者がガチャで最初に狙うべきスキレコ
+    </a>
+    <a href="#">
+      <span class="tag">中級者</span>
+      【SAOIF】TP5万〜15万帯で強くなるには
+    </a>
+    <a href="#">
+      <span class="tag">育成</span>
+      【SAOIF】熟練度レベルの効率的な上げ方
+    </a>
+    <a href="#">
+      <span class="tag">初心者</span>
+      【SAOIF】初心者向けコルの稼ぎ方
+    </a>
+  </div>
+
 </div>
 
 <footer>
