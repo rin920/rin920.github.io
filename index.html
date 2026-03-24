@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SAOIF攻略サイト</title>
-  <meta name="description" content="最新の攻略サイトが無かったので自分で作ってみました。SAOIFを効率よく進めたい人向けの攻略サイトです。無課金・微課金でも強くなれる方法をまとめています。">
+  <meta name="description" content="SAOIFを効率よく進めたい人向けの攻略サイトです。無課金・微課金でも強くなれる方法をまとめています。">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -22,10 +22,7 @@
     }
     header h1 { font-size: 22px; font-weight: bold; }
     header p { font-size: 14px; margin-top: 4px; opacity: 0.85; }
-    nav {
-      background: #1a5f94;
-      padding: 0 20px;
-    }
+    nav { background: #1a5f94; padding: 0 20px; }
     nav ul {
       max-width: 800px;
       margin: 0 auto;
@@ -47,43 +44,27 @@
       padding: 0 20px;
     }
 
-    /* プロフィール */
-    .profile {
+    /* カテゴリ */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+    .category-card {
       background: white;
       border: 1px solid #ddd;
+      border-top: 3px solid #2c7bb6;
       border-radius: 4px;
-      padding: 20px 25px;
-      margin-bottom: 25px;
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-    }
-    .profile-icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #2c7bb6;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      flex-shrink: 0;
-    }
-    .profile-text h2 {
-      font-size: 17px;
-      font-weight: bold;
-      margin-bottom: 6px;
-      border: none;
-      background: none;
-      padding: 0;
+      padding: 16px;
+      text-align: center;
+      text-decoration: none;
       color: #333;
-    }
-    .profile-text p {
       font-size: 15px;
-      color: #555;
-      margin: 0;
+      font-weight: bold;
     }
+    .category-card:hover { background: #f5f9ff; }
+    .category-card .icon { font-size: 24px; margin-bottom: 6px; display: block; }
 
     /* 記事一覧 */
     .section-title {
@@ -109,7 +90,6 @@
       color: #333;
       border-bottom: 1px solid #eee;
       font-size: 16px;
-      transition: background 0.15s;
     }
     .article-list a:last-child { border-bottom: none; }
     .article-list a:hover { background: #f5f9ff; }
@@ -121,6 +101,18 @@
       border-radius: 3px;
       white-space: nowrap;
       flex-shrink: 0;
+    }
+
+    /* サイト紹介 */
+    .about {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 16px 20px;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.8;
     }
 
     footer {
@@ -154,12 +146,25 @@
 
 <div class="container">
 
-  <div class="profile">
-    <div class="profile-icon">凛</div>
-    <div class="profile-text">
-      <h2>凛* について</h2>
-      <p>TP25万程度の中級者で、ギルド桜吹雪に所属しています。最新の攻略情報が少ないと感じていたので、初心者〜中級者向けの攻略サイトを作りました。一緒に楽しみましょう！</p>
-    </div>
+  <div class="category-grid">
+    <a href="#" class="category-card">
+      <span class="icon">📖</span>初心者ガイド
+    </a>
+    <a href="#" class="category-card">
+      <span class="icon">💎</span>ジェム・ガチャ
+    </a>
+    <a href="#" class="category-card">
+      <span class="icon">⚔️</span>スキレコ情報
+    </a>
+    <a href="#" class="category-card">
+      <span class="icon">🏰</span>ギルド
+    </a>
+    <a href="#" class="category-card">
+      <span class="icon">📅</span>イベント
+    </a>
+    <a href="#" class="category-card">
+      <span class="icon">💰</span>コル稼ぎ
+    </a>
   </div>
 
   <p class="section-title">記事一覧</p>
@@ -184,6 +189,10 @@
       <span class="tag">初心者</span>
       【SAOIF】初心者向けコルの稼ぎ方
     </a>
+  </div>
+
+  <div class="about">
+    TP25万程度の中級者・ギルド桜吹雪所属の凛*が運営しています。最新の攻略情報が少ないと感じていたので、初心者〜中級者向けの攻略サイトを作りました。一緒に楽しみましょう！
   </div>
 
 </div>
